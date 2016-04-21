@@ -1,0 +1,23 @@
+<template name="canI">
+
+  <main>
+    <p>It is: {{weather.temp_c}} &#176;c and {{weather.weather}}.</p>
+
+    <p>In {{weather.city}} the wind is blowing at: {{weather.wind_kph}} kph from the {{weather.wind_dir}}.</p>
+
+    {{#if weather.surfable}}
+      <h1>You can surf!</h1>
+    {{else}}
+      <h1>You can't surf!</h1>
+    {{/if}}
+    last update on {{formatDate weather.date}}
+  </main>
+
+  <nav>
+    <button class="chance-city" id="Stavoren">Stavoren</button>
+    <button class="chance-city" id="Schaar">Brouwersdam (Schaar)</button>
+    <button class="chance-city" id="Ijmuiden">IJmuiden</button>
+  </nav>
+
+
+</template>

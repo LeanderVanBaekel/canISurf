@@ -1,28 +1,9 @@
 <head>
-  <title>can I surf</title>
-  <link rel="stylesheet" href="style.css">
+  	<title>can I surf</title>
+  	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 
 <body>
-  {{> hello}}
+  {{> canI}}
 </body>
-
-<template name="hello">
-
-  <main>
-    <button class="stavoren">Stavoren</button>
-    <button class="ijmuiden">IJmuiden</button>
-    <button class="schaar">Brouwersdam (Schaar)</button>
-    <p>It is: {{weather.temp_c}} &#176;c and {{weather.weather}}.</p>
-
-    <p>In {{weather.city}} the wind is blowing at: {{weather.wind_kph}} kph from the {{weather.wind_dir}}.</p>
-
-    {{#if weather.weather.surfable}}
-      <h1>You can surf!</h1>
-    {{else}}
-      <h1>You can't surf!</h1>
-    {{/if}}
-    last update on {{weather.date}}
-  </main>
-
-</template>
