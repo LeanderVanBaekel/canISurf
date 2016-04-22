@@ -1,16 +1,30 @@
 <template name="canI">
 
   <main>
-    <p>It is: {{weather.temp_c}} &#176;c and {{weather.weather}}.</p>
-
-    <p>In {{weather.city}} the wind is blowing at: {{weather.wind_kph}} kph from the {{weather.wind_dir}}.</p>
 
     {{#if weather.surfable}}
       <h1>You can surf!</h1>
     {{else}}
       <h1>You can't surf!</h1>
     {{/if}}
-    last update on {{formatDate weather.date}}
+
+    <p>It is: {{weather.temp_c}} &#176;c and {{weather.weather}}.</p>
+
+    <p>In {{weather.city}} the wind is blowing at:<br> {{weather.wind_kph}} kph from the {{weather.wind_dir}}.</p>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 475.5 475.1" style="enable-background:new 0 0 475.5 475.1;" xml:space="preserve">
+      <g id="windRose">
+        <text transform="matrix(1 0 0 1 223.9238 57.0313)" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:42px;">N</text>
+        <text transform="matrix(1 0 0 1 417.2729 249.0313)" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:42px;">O</text>
+        <text transform="matrix(1 0 0 1 29.9761 249.0313)" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:42px;">W</text>
+        <text transform="matrix(1 0 0 1 225.937 442.0312)" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:42px;">Z</text>
+      </g>
+      <g id="wind-dir">
+        <circle style= "fill:rgba(52, 73, 94,0.99)" cx="237.7" cy="237.4" r="146.5"/>
+        <polygon style="fill:#FFFFFF;" points="205.3,237.3 237.5,91.1 269.8,237.3 237.5,226.6   "/>
+      </g>
+    </svg>
+
+    <p>last update on {{formatDate weather.date}}</p>
   </main>
 
   <nav>

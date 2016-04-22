@@ -8,7 +8,7 @@ city = new ReactiveVar("Stavoren");
 
 subscribeToCity = function(newCity) {
 
-  console.log('newCity function ' + newCity)
+  // console.log('newCity function ' + newCity)
 
   // window.removeEventListener('beforeunload');
   
@@ -31,11 +31,19 @@ Meteor.setInterval
 Template.canI.helpers({
   weather() {
     var weather = Weather.findOne({city:city.get()});
+    var body = document.querySelector("body");
+    var main = document.querySelector("main");
 
-    if (weather.wind_kph > 20) {
+    document.querySelector("#wind-dir").style.transform = "rotate(" + weather.wind_degrees + "deg)";
+
+    if (weather.wind_kph > 10) {
       weather.surfable = true;
+      body.style.backgroundImage = "url(images/" + 1 + "-wind.jpg)";
+      main.style.backgroundColor = "rgba(46, 204, 113,0.9)";
     } else {
       weather.surfable = false;
+      body.style.backgroundImage = "url(images/" + 1 + "-no-wind.jpg)";
+      main.style.backgroundColor = "rgba(231, 76, 60,0.9)";
     }
     return weather;
   },
@@ -48,7 +56,6 @@ Template.registerHelper('formatDate', function(date) {
 Template.canI.events( {
   'click .chance-city': function (event) {
     oldCity = city.get();
-    console.log(event.target.id);
     Meteor.call('removeCity', city.get());
     city.set(event.target.id);
     subscribeToCity(city.get());

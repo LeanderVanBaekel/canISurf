@@ -1,26 +1,45 @@
+
+
 nav {
 	text-align: center;
 	padding: 1em;
+	max-width: 30em;
+	margin: 0 auto;
 }
 
 nav button {
 	border: none;
-	margin: 0;
+	margin: 0.1em;
 	padding: 0.5em;
 	color: white;
 	background-color: rgba(10,90,200,0.8);
-	font-size: 1.3em;
+	font-size: 1.2em;
+}
+
+svg {
+	width: 8em;
+	height: 8em;
+	color: white;
+	/*transform: rotate(20deg);*/
+}
+
+#wind-dir {
+	transform-origin: 50% 50%;
+	transition: 1s all ease;
 }
 
 main {
-	width: 100vw;
+	max-width: 30em;
 	text-align: center;
-	/*position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);*/
-	margin: 50vh auto 0;
-    transform: translateY(-50%);
+	padding: 2em 2em;
+	margin: 12vh auto 0;
+    transform: translateY(-0%);
+	background-color: rgba(255, 255, 255,0.9);
+	color: white;
+}
+
+main p {
+	font-size: 1.3em;
 }
 
 .weather-section {
