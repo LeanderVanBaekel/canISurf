@@ -20,7 +20,7 @@ Meteor.methods({
 	var res = HTTP.get(apiUrl).data;
 
 	var data = {
-		date: new Date,
+		date: new Date(),
 		location: res.current_observation.display_location.full,
 		city: res.current_observation.display_location.city,
 		temp_c: res.current_observation.temp_c,
@@ -75,7 +75,7 @@ Meteor.setInterval(function(){
 		});
 
 	});
-}, 360000);
+}, 30000);
 
 
 Meteor.publish('Weather', function(city) {

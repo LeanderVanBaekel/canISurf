@@ -36,7 +36,7 @@ Template.canI.helpers({
 
     document.querySelector("#wind-dir").style.transform = "rotate(" + weather.wind_degrees + "deg)";
 
-    if (weather.wind_kph > 10) {
+    if (weather.wind_kph > 30) {
       weather.surfable = true;
       body.style.backgroundImage = "url(images/" + 1 + "-wind.jpg)";
       main.style.backgroundColor = "rgba(46, 204, 113,0.9)";
